@@ -6,7 +6,8 @@
   <div class="image-field">
     <div id="previews"></div>
     <div class="click-upload">
-      <%= f.file_field :image %>
+      <%# nameの値の後ろに「[]」をつけることで、複数同じname属性があった場合にそれぞれが配列の形でパラメータが送られる %>
+      <%= f.file_field :images, name: 'post[images][]', data: {index: 0} %>
     </div>
   </div>
   <div class="submit-btn">
